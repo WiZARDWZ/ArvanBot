@@ -1,0 +1,19 @@
+# Example configuration. No real credentials are stored here.
+arvan:
+  base_url: "https://napi.arvancloud.ir/ecc/v1"
+  authorization_value_env: "ARVAN_MU_KEY"
+  default_region: "ir-thr-c2"
+  writes_enabled: false
+  write_disable_reason: "Initial skeleton: provider write functionality is disabled until controlled validation."
+
+account_pool:
+  mode: "authorized_multi_tenant"
+  allow_cross_account_handover: false
+
+http:
+  connect_timeout_seconds: 10
+  read_timeout_seconds: 30
+  write_timeout_seconds: 30
+  pool_timeout_seconds: 10
+  max_connections: 20
+  max_keepalive_connections: 10
