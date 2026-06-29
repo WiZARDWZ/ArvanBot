@@ -5,14 +5,14 @@ Initial Python skeleton for a deterministic, observable, recoverable, and testab
 ## Safety defaults
 
 - No real credentials are committed.
-- Provider write functionality is disabled by default (`arvan.writes_enabled: false`).
+- Provider write functionality is disabled by default (`feature_gates.provider_writes_enabled: false`).
 - API details that have not been live validated must be marked `NEEDS_LIVE_VALIDATION` before production use.
 - Machine User keys must be injected from a secret manager or environment variable and redacted from logs.
 
 ## Layout
 
 - `config/settings.example.yaml` — safe example configuration.
-- `src/arvan_orchestrator/settings.py` — typed settings loader with fail-closed write defaults.
+- `src/arvan_orchestrator/settings.py` — typed settings loader with fail-closed Phase 1/2 feature gates.
 - `src/arvan_orchestrator/main.py` — minimal CLI entrypoint that reports write status.
 - `tests/` — placeholders for unit, contract, integration, and fixture assets.
 

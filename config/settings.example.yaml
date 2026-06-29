@@ -3,12 +3,17 @@ arvan:
   base_url: "https://napi.arvancloud.ir/ecc/v1"
   authorization_value_env: "ARVAN_MU_KEY"
   default_region: "ir-thr-c2"
-  writes_enabled: false
   write_disable_reason: "Initial skeleton: provider write functionality is disabled until controlled validation."
 
 account_pool:
   mode: "authorized_multi_tenant"
-  allow_cross_account_handover: false
+
+feature_gates:
+  automatic_rotation_enabled: false
+  provider_writes_enabled: false
+  traffic_calibration_required: true
+  delete_requires_approval: true
+  cross_account_handover_enabled: false
 
 http:
   connect_timeout_seconds: 10
