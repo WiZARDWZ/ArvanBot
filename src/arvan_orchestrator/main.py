@@ -9,7 +9,7 @@ def main() -> None:
     """Print safe startup status without exposing credentials."""
 
     settings = load_settings()
-    write_status = "enabled" if settings.arvan.writes_enabled else "disabled"
+    write_status = "enabled" if settings.feature_gates.provider_writes_enabled else "disabled"
     print(f"Arvan orchestrator skeleton ready; provider writes are {write_status}.")
 
 
